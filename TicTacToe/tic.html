@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script src='tic.js'></script>
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Tic Tac Toe</title>
+
+    <style>
+        body {
+            margin: auto;
+            position: fixed;
+            left: 30%;
+            background-image: url("001.jpg");
+            font-family:cursive;
+            color: white;
+        
+        }
+
+        .square {
+            height: 100px;
+            width: 100px;
+            font-size : 40px;
+            text-align: center;
+            border-color:#ccdfff;
+
+        }
+
+        #button {
+        background-color: #280b49; 
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+
+        table{
+            background-color:#152642;
+            border-color: #ccdfff;
+        }
+    
+    </style>
+
+
+</head>
+<body onload="startGame();">
+    <h1>Tic Tac Toe</h1>
+
+<h2 id='message'>messsage here!</h2>
+
+    <table border="2">
+        <tr>
+            <td class="square" id="s1" onclick="nextMove(this)"></td>
+            <td class="square" id="s2" onclick="nextMove(this)"></td>
+            <td class="square" id="s3" onclick="nextMove(this)"></td>
+        </tr>
+        <tr>
+            <td class = "square" id="s4" onclick="nextMove(this)"></td>
+            <td class = "square" id="s5" onclick="nextMove(this)"></td>
+            <td class = "square" id="s6" onclick="nextMove(this)"></td>
+        </tr>
+        <tr>
+            <td class = "square" id="s7" onclick="nextMove(this)"></td>
+            <td class = "square" id="s8" onclick="nextMove(this)"></td>
+            <td class = "square" id="s9" onclick="nextMove(this)"></td>
+        </tr>
+    </table>
+
+    <br/>
+
+    <input id="button" type="button" value="Replay" onClick="document.location.reload(true)">
+
+    
+</body>
+</html>
