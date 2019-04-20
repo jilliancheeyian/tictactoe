@@ -37,8 +37,10 @@ function setMessage(msg) {
 }
 
 function nextMove(square) {
+    checkwinner();
     if (square.innerText == "") {
         square.innerText = document.turn;
+        checkwinner();
         switchTurn();
     }
     else {
@@ -47,11 +49,20 @@ function nextMove(square) {
     
 }
 
-function switchTurn() {
+function checkwinner(){
     if (checkForWinner(document.turn)){
-        setMessage ("congrats" + document.turn + " , you won!")
+        setMessage ("congrats" + document.turn + " , you won!");
+       
+        document.getElementsByClassName("square").addEventListener("click", function(event){
+            event.preventDefault();
+              });
+
+    
     }
-     else if (document.turn == 'X') {
+}
+
+function switchTurn() {
+   if (document.turn == 'X') {
         document.turn = 'O';
         setMessage("It's " + document.turn + " 's turn.")
     }
