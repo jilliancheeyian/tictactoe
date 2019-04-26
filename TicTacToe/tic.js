@@ -26,6 +26,7 @@
 //     event.target.innerHTML = 'X' ;
 //     switchTurn();
 // })
+var x =0;
 
 function startGame() {
     document.turn = 'X';
@@ -42,9 +43,19 @@ function nextMove(square) {
         square.innerText = document.turn;
         checkwinner();
         switchTurn();
+        x = x+1;
     }
     else {
         setMessage('Pick another square.')
+    }
+
+    if (x==9)
+    {
+        setMessage ("This game is a draw.");
+       
+        document.getElementsByClassName("square").addEventListener("click", function(event){
+            event.preventDefault();
+              });
     }
     
 }
@@ -85,7 +96,7 @@ function checkForWinner(move) {
 }
 
 function checkRow (a,b,c, move){
-    return getBox(a) == move && getBox(b) == move && getBox(c) == move;
+        return getBox(a) == move && getBox(b) == move && getBox(c) == move;
 }
 
 function getBox (number){
